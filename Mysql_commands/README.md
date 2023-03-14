@@ -2,7 +2,7 @@
 
 **Author: Abhishek Dey**
 
-**Last Modified: 13/03/2023**
+**Last Modified: 14/03/2023**
 
 
 
@@ -15,6 +15,16 @@
 mysql -u root -p
 
 ```
+
+### Grant all permisions to non-root user
+
+```
+
+mysql> GRANT ALL PRIVILEGES ON * . * TO 'abhishek'@'localhost';
+
+
+```
+
 
 * Non-root user (abhishek)
 
