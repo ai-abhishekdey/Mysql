@@ -2,7 +2,7 @@
 
 ---
 
-### Installing MySQL:
+### Installing MySQL-Server:
 
 ```
 sudo apt update
@@ -13,44 +13,54 @@ sudo systemctl start mysql.service
 
 ```
 
-### Configuring MySQL:
+### Creating NEW_USER: 
+
+* Syntax:
 
 ```
-sudo mysql
+mysql> create user 'user_name@'localhost' identified by 'user_password';
 
-mysql> ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'password';
+```
+* Example:
 
-mysql> exit
-
-sudo mysql_secure_installation
-
-mysql -u root -p
-
-mysql> ALTER USER 'root'@'localhost' IDENTIFIED WITH auth_socket;
+```
+mysql> create user 'abhishek'@'localhost' identified by 'abhi1234';
 
 ```
 
-### Creating a Dedicated MySQL User and Granting Privileges:
+### Granting All Privileges to the user:
+
+* Syntax:
+
+```
+mysql> grant all privileges on *.* to 'user_name@'localhost';
+
+```
+* Example:
 
 ```
 
-sudo mysql
-
-mysql -u root -p
-
-mysql> CREATE USER 'myuser'@'localhost' IDENTIFIED BY '*Mypassword1234#';
-
-mysql> exit
+mysql> grant all privileges on *.* to 'abhishek'@'localhost';
 
 ```
 
-### Login with non-root user:
+### Login with NEW_USER:
+
+* Syntax:
+
+```
+mysql -u user_name -p
+
+```
+* Example:
 
 ```
 
-mysql -u myuser -p
+mysql -u abhishek -p
 
 ```
+
+### Installing MySQL-Workbench
 
 ## References:
 
