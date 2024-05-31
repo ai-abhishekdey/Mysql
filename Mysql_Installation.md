@@ -1,5 +1,7 @@
 ### MySql installation in Ubuntu 22.04
 
+* Author: Abhishek Dey
+* Last Modified: May 31, 2024
 ---
 
 ### Installing MySQL-Server:
@@ -62,10 +64,10 @@ mysql -u abhishek -p
 
 ### Installing MySQL-Workbench
 
-* Download debian package from the below link https://downloads.mysql.com/archives/workbench/
+* Download debian package from [this link](https://downloads.mysql.com/archives/workbench/)
 
 <p align="left">
-<img src="mysql_workbench_version.png" width="1566" height="627">
+<img src="mysql_workbench_version.png" width="1566" height="620">
 </p>
 
 * Install with downloaded debian package
