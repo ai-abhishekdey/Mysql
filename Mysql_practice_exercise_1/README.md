@@ -485,3 +485,94 @@ mysql> select * from movies where release_year between 2015 and 2018 order by re
 mysql> 
 
 ```
+
+### 11. Print all bollywood movies released between 2013 and 2015 having imdb rating >=8
+
+```
+
+mysql> select * from movies where industry="bollywood" and release_year between 2013 and 2015 and imdb_rating >= 8;
+
+```
+
+```
+
++----------+--------------------------+-----------+--------------+-------------+--------------------+-------------+
+| movie_id | title                    | industry  | release_year | imdb_rating | studio             | language_id |
++----------+--------------------------+-----------+--------------+-------------+--------------------+-------------+
+|      130 | PK                       | Bollywood |         2014 |         8.1 | Vinod Chopra Films |           1 |
+|      134 | Baahubali: The Beginning | Bollywood |         2015 |         8.0 | Arka Media Works   |           2 |
+|      136 | Bajrangi Bhaijaan        | Bollywood |         2015 |         8.1 | Salman Khan Films  |           1 |
++----------+--------------------------+-----------+--------------+-------------+--------------------+-------------+
+3 rows in set (0.00 sec)
+
+mysql>  
+
+```
+
+### 12. Print all hollywood movies released in the years 2008,2013,2019,2022
+
+
+```
+
+mysql> select * from movies where industry="hollywood" and release_year in (2008,2013,2019,2022) order by release_year;
+
+```
+
+```
++----------+---------------------------------------------+-----------+--------------+-------------+----------------+-------------+
+| movie_id | title                                       | industry  | release_year | imdb_rating | studio         | language_id |
++----------+---------------------------------------------+-----------+--------------+-------------+----------------+-------------+
+|      121 | The Dark Knight                             | Hollywood |         2008 |         9.0 | Syncopy        |           5 |
+|      103 | Thor: The Dark World                        | Hollywood |         2013 |         6.8 | Marvel Studios |           5 |
+|      124 | Parasite                                    | Hollywood |         2019 |         8.5 |                |           5 |
+|      125 | Avengers: Endgame                           | Hollywood |         2019 |         8.4 | Marvel Studios |           5 |
+|      102 | Doctor Strange in the Multiverse of Madness | Hollywood |         2022 |         7.0 | Marvel Studios |           5 |
+|      105 | Thor: Love and Thunder                      | Hollywood |         2022 |         6.8 | Marvel Studios |           5 |
++----------+---------------------------------------------+-----------+--------------+-------------+----------------+-------------+
+6 rows in set (0.00 sec)
+
+mysql>
+
+```
+
+### 13. Print all movies from Marvel Studios and Zee Studios released in the year 2022
+
+```
+
+mysql> select * from movies where studio in ("Marvel Studios", "Zee Studios") and release_year=2022;
+
+```
+
+```
++----------+---------------------------------------------+-----------+--------------+-------------+----------------+-------------+
+| movie_id | title                                       | industry  | release_year | imdb_rating | studio         | language_id |
++----------+---------------------------------------------+-----------+--------------+-------------+----------------+-------------+
+|      102 | Doctor Strange in the Multiverse of Madness | Hollywood |         2022 |         7.0 | Marvel Studios |           5 |
+|      105 | Thor: Love and Thunder                      | Hollywood |         2022 |         6.8 | Marvel Studios |           5 |
+|      135 | The Kashmir Files                           | Bollywood |         2022 |         8.3 | Zee Studios    |           1 |
++----------+---------------------------------------------+-----------+--------------+-------------+----------------+-------------+
+3 rows in set (0.00 sec)
+
+mysql> 
+
+```
+
+### 14. Print all records from movies table where imdb rating is null
+
+```
+
+mysql> select * from movies where imdb_rating is null;
+
+```
+
+```
++----------+-------+-----------+--------------+-------------+--------------------+-------------+
+| movie_id | title | industry  | release_year | imdb_rating | studio             | language_id |
++----------+-------+-----------+--------------+-------------+--------------------+-------------+
+|      131 | Sanju | Bollywood |         2018 |        NULL | Vinod Chopra Films |           1 |
++----------+-------+-----------+--------------+-------------+--------------------+-------------+
+1 row in set (0.00 sec)
+
+mysql> 
+
+s```
