@@ -223,3 +223,106 @@ mysql> (select * from movies order by movie_id desc limit 5) order by movie_id a
 mysql> 
 
 ```
+
+## Exercise:
+
+### 1. Print all movie titles and release year for all Marvel Studios movies
+
+```
+
+mysql> select title, release_year from movies where studio like "%Marvel%";
+
+```
+
+```
++---------------------------------------------+--------------+
+| title                                       | release_year |
++---------------------------------------------+--------------+
+| Doctor Strange in the Multiverse of Madness |         2022 |
+| Thor: The Dark World                        |         2013 |
+| Thor: Ragnarok                              |         2017 |
+| Thor: Love and Thunder                      |         2022 |
+| Avengers: Endgame                           |         2019 |
+| Avengers: Infinity War                      |         2018 |
+| Captain America: The First Avenger          |         2011 |
+| Captain America: The Winter Soldier         |         2014 |
++---------------------------------------------+--------------+
+8 rows in set (0.00 sec)
+
+mysql> 
+
+```
+
+### 2. Print all movies that have Avenger in their name
+
+```
+
+mysql> select * from movies where title like "%Avenger%";
+
+```
+
+```
++----------+------------------------------------+-----------+--------------+-------------+----------------+-------------+
+| movie_id | title                              | industry  | release_year | imdb_rating | studio         | language_id |
++----------+------------------------------------+-----------+--------------+-------------+----------------+-------------+
+|      125 | Avengers: Endgame                  | Hollywood |         2019 |         8.4 | Marvel Studios |           5 |
+|      126 | Avengers: Infinity War             | Hollywood |         2018 |         8.4 | Marvel Studios |           5 |
+|      137 | Captain America: The First Avenger | Hollywood |         2011 |         6.9 | Marvel Studios |           5 |
++----------+------------------------------------+-----------+--------------+-------------+----------------+-------------+
+3 rows in set (0.00 sec)
+
+mysql> 
+
+```
+### 3. Print the year when the movie "The Godfather" was released
+
+
+```
+
+mysql> select release_year from movies where title="The Godfather";
+
+```
+
+```
++--------------+
+| release_year |
++--------------+
+|         1972 |
++--------------+
+1 row in set (0.00 sec)
+
+mysql> 
+
+```
+
+### 4. Print all distinct movie studios in the Bollywood industry
+
+```
+
+mysql> select distinct studio from movies where industry="Bollywood";
+
+```
+
+```
++---------------------------+
+| studio                    |
++---------------------------+
+| Hombale Films             |
+| United Producers          |
+| Yash Raj Films            |
+| Vinod Chopra Films        |
+| Dharma Productions        |
+|                           |
+| Government of West Bengal |
+| Vinod Chopra Productions  |
+| Mythri Movie Makers       |
+| DVV Entertainment         |
+| Arka Media Works          |
+| Zee Studios               |
+| Salman Khan Films         |
++---------------------------+
+13 rows in set (0.14 sec)
+
+mysql>
+
+```
