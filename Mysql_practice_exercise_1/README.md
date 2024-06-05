@@ -326,3 +326,162 @@ mysql> select distinct studio from movies where industry="Bollywood";
 mysql>
 
 ```
+
+### 5. Print all movies having imdb rating > 9
+
+```
+
+mysql> select * from movies where imdb_rating > 9;
+
+```
+
+```
++----------+--------------------------+-----------+--------------+-------------+---------------------------+-------------+
+| movie_id | title                    | industry  | release_year | imdb_rating | studio                    | language_id |
++----------+--------------------------+-----------+--------------+-------------+---------------------------+-------------+
+|      111 | The Shawshank Redemption | Hollywood |         1994 |         9.3 | Castle Rock Entertainment |           5 |
+|      120 | The Godfather            | Hollywood |         1972 |         9.2 | Paramount Pictures        |           5 |
++----------+--------------------------+-----------+--------------+-------------+---------------------------+-------------+
+2 rows in set (0.00 sec)
+
+mysql> 
+
+```
+
+### 6. Print all movies having imdb rating between 6 and 8
+
+```
+
+mysql> select * from movies where imdb_rating between 6 and 8;
+
+```
+
+```
++----------+---------------------------------------------+-----------+--------------+-------------+---------------------+-------------+
+| movie_id | title                                       | industry  | release_year | imdb_rating | studio              | language_id |
++----------+---------------------------------------------+-----------+--------------+-------------+---------------------+-------------+
+|      102 | Doctor Strange in the Multiverse of Madness | Hollywood |         2022 |         7.0 | Marvel Studios      |           5 |
+|      103 | Thor: The Dark World                        | Hollywood |         2013 |         6.8 | Marvel Studios      |           5 |
+|      104 | Thor: Ragnarok                              | Hollywood |         2017 |         7.9 | Marvel Studios      |           5 |
+|      105 | Thor: Love and Thunder                      | Hollywood |         2022 |         6.8 | Marvel Studios      |           5 |
+|      107 | Dilwale Dulhania Le Jayenge                 | Bollywood |         1995 |         8.0 | Yash Raj Films      |           1 |
+|      109 | Kabhi Khushi Kabhie Gham                    | Bollywood |         2001 |         7.4 | Dharma Productions  |           1 |
+|      110 | Bajirao Mastani                             | Bollywood |         2015 |         7.2 |                     |           1 |
+|      115 | The Pursuit of Happyness                    | Hollywood |         2006 |         8.0 | Columbia Pictures   |           5 |
+|      117 | Titanic                                     | Hollywood |         1997 |         7.9 | Paramount Pictures  |           5 |
+|      119 | Avatar                                      | Hollywood |         2009 |         7.8 | 20th Century Fox    |           5 |
+|      132 | Pushpa: The Rise - Part 1                   | Bollywood |         2021 |         7.6 | Mythri Movie Makers |           2 |
+|      133 | RRR                                         | Bollywood |         2022 |         8.0 | DVV Entertainment   |           2 |
+|      134 | Baahubali: The Beginning                    | Bollywood |         2015 |         8.0 | Arka Media Works    |           2 |
+|      137 | Captain America: The First Avenger          | Hollywood |         2011 |         6.9 | Marvel Studios      |           5 |
+|      138 | Captain America: The Winter Soldier         | Hollywood |         2014 |         7.8 | Marvel Studios      |           5 |
++----------+---------------------------------------------+-----------+--------------+-------------+---------------------+-------------+
+15 rows in set (0.00 sec)
+
+mysql> 
+
+```
+
+### 7. Print all movies released in the year 2022
+
+```
+
+mysql> select * from movies where release_year=2022;
+
+```
+
+```
+
++----------+---------------------------------------------+-----------+--------------+-------------+-------------------+-------------+
+| movie_id | title                                       | industry  | release_year | imdb_rating | studio            | language_id |
++----------+---------------------------------------------+-----------+--------------+-------------+-------------------+-------------+
+|      101 | K.G.F: Chapter 2                            | Bollywood |         2022 |         8.4 | Hombale Films     |           3 |
+|      102 | Doctor Strange in the Multiverse of Madness | Hollywood |         2022 |         7.0 | Marvel Studios    |           5 |
+|      105 | Thor: Love and Thunder                      | Hollywood |         2022 |         6.8 | Marvel Studios    |           5 |
+|      133 | RRR                                         | Bollywood |         2022 |         8.0 | DVV Entertainment |           2 |
+|      135 | The Kashmir Files                           | Bollywood |         2022 |         8.3 | Zee Studios       |           1 |
++----------+---------------------------------------------+-----------+--------------+-------------+-------------------+-------------+
+5 rows in set (0.00 sec)
+
+mysql> 
+
+```
+
+### 8. Print all movies released in the year 2019 and 2022
+
+```
+
+mysql> select * from movies where release_year=2019 or release_year=2022;
+
+```
+
+```
++----------+---------------------------------------------+-----------+--------------+-------------+-------------------+-------------+
+| movie_id | title                                       | industry  | release_year | imdb_rating | studio            | language_id |
++----------+---------------------------------------------+-----------+--------------+-------------+-------------------+-------------+
+|      101 | K.G.F: Chapter 2                            | Bollywood |         2022 |         8.4 | Hombale Films     |           3 |
+|      102 | Doctor Strange in the Multiverse of Madness | Hollywood |         2022 |         7.0 | Marvel Studios    |           5 |
+|      105 | Thor: Love and Thunder                      | Hollywood |         2022 |         6.8 | Marvel Studios    |           5 |
+|      124 | Parasite                                    | Hollywood |         2019 |         8.5 |                   |           5 |
+|      125 | Avengers: Endgame                           | Hollywood |         2019 |         8.4 | Marvel Studios    |           5 |
+|      133 | RRR                                         | Bollywood |         2022 |         8.0 | DVV Entertainment |           2 |
+|      135 | The Kashmir Files                           | Bollywood |         2022 |         8.3 | Zee Studios       |           1 |
++----------+---------------------------------------------+-----------+--------------+-------------+-------------------+-------------+
+7 rows in set (0.00 sec)
+
+mysql> 
+
+```
+
+### 9. Print all movies released between 2015 and 2018 in asceding order
+
+```
+
+mysql> select * from movies where release_year between 2015 and 2018 order by release_year;
+
+```
+
+```
++----------+--------------------------+-----------+--------------+-------------+--------------------+-------------+
+| movie_id | title                    | industry  | release_year | imdb_rating | studio             | language_id |
++----------+--------------------------+-----------+--------------+-------------+--------------------+-------------+
+|      110 | Bajirao Mastani          | Bollywood |         2015 |         7.2 |                    |           1 |
+|      134 | Baahubali: The Beginning | Bollywood |         2015 |         8.0 | Arka Media Works   |           2 |
+|      136 | Bajrangi Bhaijaan        | Bollywood |         2015 |         8.1 | Salman Khan Films  |           1 |
+|      104 | Thor: Ragnarok           | Hollywood |         2017 |         7.9 | Marvel Studios     |           5 |
+|      126 | Avengers: Infinity War   | Hollywood |         2018 |         8.4 | Marvel Studios     |           5 |
+|      131 | Sanju                    | Bollywood |         2018 |        NULL | Vinod Chopra Films |           1 |
+|      139 | Race 3                   | Bollywood |         2018 |         1.9 | Salman Khan Films  |           1 |
++----------+--------------------------+-----------+--------------+-------------+--------------------+-------------+
+7 rows in set (0.00 sec)
+
+mysql> 
+
+```
+
+### 10. Print all movies released between 2015 and 2018 in desceding order
+
+```
+
+mysql> select * from movies where release_year between 2015 and 2018 order by release_year desc;
+
+```
+
+```
+
++----------+--------------------------+-----------+--------------+-------------+--------------------+-------------+
+| movie_id | title                    | industry  | release_year | imdb_rating | studio             | language_id |
++----------+--------------------------+-----------+--------------+-------------+--------------------+-------------+
+|      126 | Avengers: Infinity War   | Hollywood |         2018 |         8.4 | Marvel Studios     |           5 |
+|      131 | Sanju                    | Bollywood |         2018 |        NULL | Vinod Chopra Films |           1 |
+|      139 | Race 3                   | Bollywood |         2018 |         1.9 | Salman Khan Films  |           1 |
+|      104 | Thor: Ragnarok           | Hollywood |         2017 |         7.9 | Marvel Studios     |           5 |
+|      110 | Bajirao Mastani          | Bollywood |         2015 |         7.2 |                    |           1 |
+|      134 | Baahubali: The Beginning | Bollywood |         2015 |         8.0 | Arka Media Works   |           2 |
+|      136 | Bajrangi Bhaijaan        | Bollywood |         2015 |         8.1 | Salman Khan Films  |           1 |
++----------+--------------------------+-----------+--------------+-------------+--------------------+-------------+
+7 rows in set (0.00 sec)
+
+mysql> 
+
+```
