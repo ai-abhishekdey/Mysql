@@ -35,7 +35,7 @@ mysql> show databases;
 ```
 
 
-### import movies-db.sql
+### Import movies-db.sql
 
 * syntax
 
@@ -76,7 +76,7 @@ mysql>
 
 ```
 
-### show tables in the movies database
+### Show tables in the movies database
 
 ```
 
@@ -100,7 +100,7 @@ mysql>
 
 ```
 
-### print all the fields of movies table
+### Print all the fields of movies table
 
 ```
 
@@ -129,7 +129,7 @@ mysql>
 ## Demonstration: Use of ORDER BY and LIMIT
 
 
-### print first 5 entires of movies table ordered by movie_id in ascending order : 101, 102..105
+### Print first 5 entires of movies table ordered by movie_id in ascending order : 101, 102..105
 
 ```
 mysql> select * from movies order by movie_id limit 5;
@@ -154,7 +154,7 @@ mysql>
 
 ```
 
-### print first 5 entires of movies table ordered by movie_id in descending order : 105, 104..101
+### Print first 5 entires of movies table ordered by movie_id in descending order : 105, 104..101
 
 ```
 
@@ -178,7 +178,7 @@ mysql>
 
 ```
 
-### print last 5 entires of movies table ordered by movie_id in descending order : 140, 139..136
+### Print last 5 entires of movies table ordered by movie_id in descending order : 140, 139..136
 
 ```
 mysql> select * from movies order by movie_id desc limit 5;
@@ -201,7 +201,7 @@ mysql>
 
 ```
 
-### print last 5 entires of movies table ordered by movie_id in ascending order : 136, 137..140
+### Print last 5 entires of movies table ordered by movie_id in ascending order : 136, 137..140
 
 ```
 mysql> (select * from movies order by movie_id desc limit 5) order by movie_id asc;
