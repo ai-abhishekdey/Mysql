@@ -1,0 +1,225 @@
+## Mysql practice exercise - 1
+
+**Author: Abhishek Dey**
+
+**Last modified: 05/06/2024**
+
+
+### Login to mysql
+
+```
+
+mysql -u abhishek -p
+
+```
+
+### Show all existing databases
+
+```
+
+mysql> show databases;
+
+```
+
+```
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| sys                |
++--------------------+
+4 rows in set (0.00 sec)
+
+```
+
+
+### import movies-db.sql
+
+* syntax
+
+```
+mysql> source /path/to/sql/file.sql
+
+```
+
+* example
+
+```
+
+mysql> source movies-db.sql;
+
+```
+
+```
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| moviesdb           |
+| mysql              |
+| performance_schema |
+| sys                |
++--------------------+
+5 rows in set (0.01 sec)
+ 
+```
+
+### Select movies database
+
+```
+mysql> use moviesdb;
+Database changed
+mysql> 
+
+```
+
+### show tables in the movies database
+
+```
+
+mysql> show tables;
+
+```
+
+```
++--------------------+
+| Tables_in_moviesdb |
++--------------------+
+| actors             |
+| financials         |
+| languages          |
+| movie_actor        |
+| movies             |
++--------------------+
+5 rows in set (0.00 sec)
+
+mysql> 
+
+```
+
+### print all the fields of movies table
+
+```
+
+mysql> describe movies;
+
+```
+
+```
++--------------+------------------+------+-----+---------+----------------+
+| Field        | Type             | Null | Key | Default | Extra          |
++--------------+------------------+------+-----+---------+----------------+
+| movie_id     | int unsigned     | NO   | PRI | NULL    | auto_increment |
+| title        | varchar(150)     | NO   |     | NULL    |                |
+| industry     | varchar(45)      | YES  |     | NULL    |                |
+| release_year | year             | YES  |     | NULL    |                |
+| imdb_rating  | decimal(3,1)     | YES  |     | NULL    |                |
+| studio       | varchar(45)      | YES  |     | NULL    |                |
+| language_id  | tinyint unsigned | YES  | MUL | NULL    |                |
++--------------+------------------+------+-----+---------+----------------+
+7 rows in set (0.09 sec)
+
+mysql> 
+
+```
+
+## Demonstration: Use of ORDER BY and LIMIT
+
+
+### print first 5 entires of movies table ordered by movie_id in ascending order : 101, 102..105
+
+```
+mysql> select * from movies order by movie_id limit 5;
+
+```
+
+```
+mysql> select * from movies order by movie_id asc limit 5;
++----------+---------------------------------------------+-----------+--------------+-------------+----------------+-------------+
+| movie_id | title                                       | industry  | release_year | imdb_rating | studio         | language_id |
++----------+---------------------------------------------+-----------+--------------+-------------+----------------+-------------+
+|      101 | K.G.F: Chapter 2                            | Bollywood |         2022 |         8.4 | Hombale Films  |           3 |
+|      102 | Doctor Strange in the Multiverse of Madness | Hollywood |         2022 |         7.0 | Marvel Studios |           5 |
+|      103 | Thor: The Dark World                        | Hollywood |         2013 |         6.8 | Marvel Studios |           5 |
+|      104 | Thor: Ragnarok                              | Hollywood |         2017 |         7.9 | Marvel Studios |           5 |
+|      105 | Thor: Love and Thunder                      | Hollywood |         2022 |         6.8 | Marvel Studios |           5 |
++----------+---------------------------------------------+-----------+--------------+-------------+----------------+-------------+
+5 rows in set (0.00 sec)
+
+mysql> 
+
+
+```
+
+### print first 5 entires of movies table ordered by movie_id in descending order : 105, 104..101
+
+```
+
+mysql> (select * from movies order by movie_id limit 5) order by movie_id desc;
+
+```
+
+```
++----------+---------------------------------------------+-----------+--------------+-------------+----------------+-------------+
+| movie_id | title                                       | industry  | release_year | imdb_rating | studio         | language_id |
++----------+---------------------------------------------+-----------+--------------+-------------+----------------+-------------+
+|      105 | Thor: Love and Thunder                      | Hollywood |         2022 |         6.8 | Marvel Studios |           5 |
+|      104 | Thor: Ragnarok                              | Hollywood |         2017 |         7.9 | Marvel Studios |           5 |
+|      103 | Thor: The Dark World                        | Hollywood |         2013 |         6.8 | Marvel Studios |           5 |
+|      102 | Doctor Strange in the Multiverse of Madness | Hollywood |         2022 |         7.0 | Marvel Studios |           5 |
+|      101 | K.G.F: Chapter 2                            | Bollywood |         2022 |         8.4 | Hombale Films  |           3 |
++----------+---------------------------------------------+-----------+--------------+-------------+----------------+-------------+
+5 rows in set (0.01 sec)
+
+mysql> 
+
+```
+
+### print last 5 entires of movies table ordered by movie_id in descending order : 140, 139..136
+
+```
+mysql> select * from movies order by movie_id desc limit 5;
+
+```
+
+```
++----------+-------------------------------------+-----------+--------------+-------------+--------------------+-------------+
+| movie_id | title                               | industry  | release_year | imdb_rating | studio             | language_id |
++----------+-------------------------------------+-----------+--------------+-------------+--------------------+-------------+
+|      140 | Shershaah                           | Bollywood |         2021 |         8.4 | Dharma Productions |           1 |
+|      139 | Race 3                              | Bollywood |         2018 |         1.9 | Salman Khan Films  |           1 |
+|      138 | Captain America: The Winter Soldier | Hollywood |         2014 |         7.8 | Marvel Studios     |           5 |
+|      137 | Captain America: The First Avenger  | Hollywood |         2011 |         6.9 | Marvel Studios     |           5 |
+|      136 | Bajrangi Bhaijaan                   | Bollywood |         2015 |         8.1 | Salman Khan Films  |           1 |
++----------+-------------------------------------+-----------+--------------+-------------+--------------------+-------------+
+5 rows in set (0.00 sec)
+
+mysql> 
+
+```
+
+### print last 5 entires of movies table ordered by movie_id in ascending order : 136, 137..140
+
+```
+mysql> (select * from movies order by movie_id desc limit 5) order by movie_id asc;
+
+```
+
+```
++----------+-------------------------------------+-----------+--------------+-------------+--------------------+-------------+
+| movie_id | title                               | industry  | release_year | imdb_rating | studio             | language_id |
++----------+-------------------------------------+-----------+--------------+-------------+--------------------+-------------+
+|      136 | Bajrangi Bhaijaan                   | Bollywood |         2015 |         8.1 | Salman Khan Films  |           1 |
+|      137 | Captain America: The First Avenger  | Hollywood |         2011 |         6.9 | Marvel Studios     |           5 |
+|      138 | Captain America: The Winter Soldier | Hollywood |         2014 |         7.8 | Marvel Studios     |           5 |
+|      139 | Race 3                              | Bollywood |         2018 |         1.9 | Salman Khan Films  |           1 |
+|      140 | Shershaah                           | Bollywood |         2021 |         8.4 | Dharma Productions |           1 |
++----------+-------------------------------------+-----------+--------------+-------------+--------------------+-------------+
+5 rows in set (0.00 sec)
+
+mysql> 
+
+```
