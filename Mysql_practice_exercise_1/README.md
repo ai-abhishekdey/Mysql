@@ -126,7 +126,7 @@ mysql>
 
 ```
 
-## Demonstration: Use of ORDER BY and LIMIT
+## DEMONSTRATION: Use of ORDER BY and LIMIT
 
 
 ### Print first 5 entires of movies table ordered by movie_id in ascending order : 101, 102..105
@@ -223,6 +223,10 @@ mysql> (select * from movies order by movie_id desc limit 5) order by movie_id a
 mysql> 
 
 ```
+
+## DEMONSTRATION: Use of COUNT, MIN, MAX, AVG, GROUPBY
+
+
 
 ## Exercise:
 
