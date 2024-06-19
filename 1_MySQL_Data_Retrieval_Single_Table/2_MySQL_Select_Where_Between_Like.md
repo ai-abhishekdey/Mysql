@@ -1,4 +1,4 @@
-## MySQL SELECT & WHERE
+## MySQL:  Select, Where, Between, Like
 
 
 **Author: Abhishek Dey**
@@ -25,7 +25,7 @@
 |     LIKE     | Search for a pattern                             |
 |      IN      | To specify multiple possible values for a column |
 
-## Examples:
+## Examples: SELECT statement
 
 * Select all from **country** table
 
@@ -70,6 +70,8 @@ mysql> select Name, Continent, Population from country;
 mysql> 
 
 ```
+
+## Examples: WHERE clause
 
 * Select countries and population of North America continent only
 
@@ -136,6 +138,8 @@ mysql> select Name,Population,Continent from country where Population < 10000;
 19 rows in set (0.00 sec)
 
 ```
+
+## Examples: BETWEEN and LIKE
 
 * Select countries where population is between 1000 and 5000. Print Country name, population and continent
 
