@@ -1,7 +1,7 @@
-# Mysql
+# MySQL
 This repo is related to Mysql
 
-## What is Mysql ?
+## What is MySQL ?
 
 
 * MySQL is a relational database management system
