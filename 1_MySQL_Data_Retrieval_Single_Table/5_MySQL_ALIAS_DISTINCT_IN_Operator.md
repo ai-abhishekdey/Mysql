@@ -1,4 +1,4 @@
-## MySQL:  ALIAS, DISTICT, IN OPERATOR
+## MySQL:  ALIAS, DISTINCT, IN OPERATOR
 
 
 **Author: Abhishek Dey**
