@@ -1,4 +1,4 @@
-## MySQL:  Alias, Distinct and IN Operator
+## MySQL:  ALIAS, DISTICT, IN OPERATOR
 
 
 **Author: Abhishek Dey**
@@ -10,7 +10,7 @@
 
 * **Alias** is used as a short form or temporary name of a table field
 
-* **Distint** is used to find the unique entries
+* **Distinct** is used to find the unique entries
 
 * **IN** operator is used to specify selected values
 
