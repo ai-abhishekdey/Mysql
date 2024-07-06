@@ -226,7 +226,7 @@ mysql> select A.movie_id, title, budget, revenue from movies A
 ```    
 
 
-## Left Join
+## Right Join
 
 ![right](images/right.png)
 
@@ -285,6 +285,63 @@ mysql> select B.movie_id, title, budget, revenue from movies A
 40 rows in set (0.00 sec)
 
 mysql> 
+
+
+```
+
+## Left Join excluding Inner Join
+
+![left_ex](images/left_ex_inner.png)
+
+```
+
+mysql> select A.movie_id, title, budget, revenue from movies A 
+    -> LEFT JOIN financials B
+    -> ON A.movie_id=B.movie_id
+    -> WHERE B.movie_id IS NULL;
+
+
+```
+
+```
++----------+-----------+--------+---------+
+| movie_id | title     | budget | revenue |
++----------+-----------+--------+---------+
+|      106 | Sholay    |   NULL |    NULL |
+|      112 | Inception |   NULL |    NULL |
++----------+-----------+--------+---------+
+2 rows in set (0.00 sec)
+
+mysql> 
+
+
+```
+
+## Right Join excluding Inner Join
+
+![left_ex](images/right_ex_inner.png)
+
+```
+mysql> select B.movie_id, title, budget, revenue from movies A 
+    -> RIGHT JOIN financials B
+    -> ON A.movie_id=B.movie_id
+    -> WHERE A.movie_id IS NULL;
+
+```
+
+```
+
++----------+-------+--------+---------+
+| movie_id | title | budget | revenue |
++----------+-------+--------+---------+
+|      114 | NULL  | 205.00 |  365.30 |
+|      406 | NULL  |  30.00 |  350.00 |
+|      412 | NULL  | 160.00 |  836.80 |
++----------+-------+--------+---------+
+3 rows in set (0.00 sec)
+
+mysql> 
+
 
 
 ```
