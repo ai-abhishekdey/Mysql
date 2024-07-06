@@ -4,7 +4,7 @@
 
 **Last Modified : July 6, 2024**
 
-## ## SQL JOINS - BY EXAMPLE QUERIES
+## SQL JOINS - BY EXAMPLE QUERIES
 
 ![sql_join_queries](images/sql_join_by_queries.png)
 
@@ -63,7 +63,7 @@ mysql>
 
 ```
 
-* Fields in movies table [ TABLE A]
+* Fields in movies table **[ TABLE A]**
 
 ```
 
@@ -85,7 +85,7 @@ mysql>
 
 ```
 
-* Fields in financials table [TABLE B]
+* Fields in financials table **[TABLE B]**
 
 ```
 mysql> describe financials;
