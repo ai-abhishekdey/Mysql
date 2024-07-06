@@ -110,7 +110,7 @@ mysql>
 ## Inner Join
 
 <p align="left">
-<img src="images/inner.png" width="1000" height="600">
+<img src="images/inner.png" width="640" height="480">
 </p>
 
 ```
@@ -169,7 +169,7 @@ mysql> select A.movie_id, title, budget, revenue from movies A
 ## Left Join
 
 <p align="left">
-<img src="images/left.png" width="1000" height="600">
+<img src="images/left.png" width="640" height="480">
 </p>
 
 
@@ -236,7 +236,7 @@ mysql> select A.movie_id, title, budget, revenue from movies A
 
 
 <p align="left">
-<img src="images/right.png" width="1000" height="600">
+<img src="images/right.png" width="640" height="480">
 </p>
 
 
@@ -303,7 +303,7 @@ mysql>
 
 
 <p align="left">
-<img src="images/left_ex_inner.png" width="1000" height="600">
+<img src="images/left_ex_inner.png" width="640" height="480">
 </p>
 
 
@@ -335,7 +335,7 @@ mysql>
 
 
 <p align="left">
-<img src="images/right_ex_inner.png" width="1000" height="600">
+<img src="images/right_ex_inner.png" width="640" height="480">
 </p>
 
 
@@ -364,7 +364,7 @@ mysql>
 ## Full Outer Join
 
 <p align="left">
-<img src="images/full_outer.png" width="1000" height="600">
+<img src="images/full_outer.png" width="640" height="480">
 </p>
 
 ```
@@ -434,7 +434,7 @@ mysql> select A.movie_id, title, budget, revenue from movies A
 ## Full Outer Join excluding inner join
 
 <p align="left">
-<img src="images/full_outer_ex_inner.png" width="1000" height="600">
+<img src="images/full_outer_ex_inner.png" width="640" height="480">
 </p>
   
 
