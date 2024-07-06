@@ -107,7 +107,7 @@ mysql>
 
 ```
 
-## Inner Join
+## 1. Inner Join
 
 <p align="left">
 <img src="images/inner.png" width="640" height="480">
@@ -166,7 +166,7 @@ mysql> select A.movie_id, title, budget, revenue from movies A
 
 ```
 
-## Left Join
+## 2. Left Join
 
 <p align="left">
 <img src="images/left.png" width="640" height="480">
@@ -232,7 +232,7 @@ mysql> select A.movie_id, title, budget, revenue from movies A
 ```    
 
 
-## Right Join
+## 3. Right Join
 
 
 <p align="left">
@@ -299,7 +299,7 @@ mysql>
 
 ```
 
-## Left Join excluding Inner Join
+## 4. Left Join excluding Inner Join
 
 
 <p align="left">
@@ -331,7 +331,7 @@ mysql>
 
 ```
 
-## Right Join excluding Inner Join
+## 5. Right Join excluding Inner Join
 
 
 <p align="left">
@@ -361,7 +361,7 @@ mysql> select B.movie_id, title, budget, revenue from movies A
 mysql> 
 
 ```
-## Full Outer Join
+## 6. Full Outer Join
 
 <p align="left">
 <img src="images/full_outer.png" width="640" height="480">
@@ -431,7 +431,7 @@ mysql> select A.movie_id, title, budget, revenue from movies A
 ```
 
 
-## Full Outer Join excluding inner join
+## 7. Full Outer Join excluding inner join
 
 <p align="left">
 <img src="images/full_outer_ex_inner.png" width="640" height="480">
