@@ -502,3 +502,44 @@ mysql>
 
 ```
 
+## NOTE: If the COMMOM column name of both the tables are exactly same ( Say movie_id), then we can use USING instead of ON A.movie_id=B.movie_ID
+
+### Example: ON A.movie_id=B.movie_id
+
+```
+mysql> select A.movie_id, title, budget, revenue from movies A 
+    -> LEFT JOIN financials B
+    -> ON A.movie_id=B.movie_id LIMIT 3;
+
+
++----------+---------------------------------------------+--------+---------+
+| movie_id | title                                       | budget | revenue |
++----------+---------------------------------------------+--------+---------+
+|      101 | K.G.F: Chapter 2                            |   1.00 |   12.50 |
+|      102 | Doctor Strange in the Multiverse of Madness | 200.00 |  954.80 |
+|      103 | Thor: The Dark World                        | 165.00 |  644.80 |
++----------+---------------------------------------------+--------+---------+
+3 rows in set (0.08 sec)
+
+```
+
+### Example: USING
+
+```
+mysql> select A.movie_id, title, budget, revenue from movies A
+    -> LEFT JOIN financials B
+    -> USING (movie_id) LIMIT 3;
+
+
++----------+---------------------------------------------+--------+---------+
+| movie_id | title                                       | budget | revenue |
++----------+---------------------------------------------+--------+---------+
+|      101 | K.G.F: Chapter 2                            |   1.00 |   12.50 |
+|      102 | Doctor Strange in the Multiverse of Madness | 200.00 |  954.80 |
+|      103 | Thor: The Dark World                        | 165.00 |  644.80 |
++----------+---------------------------------------------+--------+---------+
+3 rows in set (0.01 sec)
+
+mysql> 
+
+```
